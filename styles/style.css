@@ -1,0 +1,226 @@
+/*.svg{
+    position: absolute;
+    right: 43px;
+    top: 39px;
+    max-height: 100%;
+    height: auto;
+}*/
+
+.rectangle-23,
+.rectangle-23 * {
+  box-sizing: border-box;
+}
+.rectangle-23 {
+  background: #e7e0e0;
+  border-radius: 20px;
+  width: 169px;
+  height: 24px;
+  position: relative;
+}
+
+.categories,
+.categories * {
+  box-sizing: border-box;
+}
+.categories {
+  color: #000000;
+  text-align: center;
+  font-family: "Montserrat-Bold", sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 250px;
+}
+
+.rectangle-10,
+.rectangle-10 * {
+  box-sizing: border-box;
+}
+.rectangle-10 {
+  background: #e7e0e0;
+  border-radius: 20px;
+  width: 350px;
+  height: 25px;
+  position: relative;
+  margin-left: 100px;
+  margin-bottom: 20px;
+}
+
+.search-for-an-item,
+.search-for-an-item * {
+  box-sizing: border-box;
+}
+.search-for-an-item {
+  text-align: left;
+  font-family: "Montserrat-Bold", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  position: relative;
+  margin-left: 45px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.search,
+.search * {
+  box-sizing: border-box;
+}
+.search {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  overflow: visible;
+  margin-top: 0px;
+}
+
+.shopping-bag,
+.shopping-bag * {
+  box-sizing: border-box;
+}
+.shopping-bag {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  overflow: visible;
+}
+
+.rectangle-24,
+.rectangle-24 * {
+  box-sizing: border-box;
+}
+.rectangle-24 {
+  background: #e7e0e0;
+  border-radius: 20px;
+  width: 900px;
+  height: 210px;
+  position: relative;
+}
+
+.rectangle-11,
+.rectangle-11 * {
+  box-sizing: border-box;
+}
+.rectangle-11 {
+  background: #e7e0e0;
+  width: 309px;
+  height: 1117px;
+  position: relative;
+}
+
+._100 {
+  color: #f90093;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  position: absolute;
+  left: 108px;
+  top: 300px;
+}
+.stores {
+  color: #000000;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  position: absolute;
+  left: 99px;
+  top: 325px;
+}
+.customers {
+  color: #000000;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  position: absolute;
+  left: 280px;
+  top: 325px;
+}
+
+.staff {
+  color: #000000;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  position: absolute;
+  left: 520px;
+  top: 325px;
+  width: 111px;
+}
+._1002 {
+  color: #f90093;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  position: absolute;
+  left: 522px;
+  top: 300px;
+}
+._1003 {
+  color: #f90093;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  position: absolute;
+  left: 308px;
+  top: 300px;
+}
+
+span {
+  color: #f90093;
+  font-family: "Montserrat", sans-serif;
+}
+.title,
+.navbar-item {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+.subtitle {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+}
+.logo {
+  width: 100px !important;
+  height: 100px !important;
+  position: relative;
+}
+.logo,
+.logo * {
+  box-sizing: border-box;
+}
+
+.img-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 1rem;
+  margin: 1rem;
+}
+.gallery-item {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+.gallery-item img {
+  width: 100%;
+  height: auto;
+}
+.gallery-item p {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  margin: 0;
+  text-align: center;
+}
+
+.sec-head {
+  text-align: center;
+  display: flex;
+}

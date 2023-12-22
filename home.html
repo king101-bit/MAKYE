@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/bulma.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
+<style>
+    /* Additional styles for custom adjustments */
+    .navbar-item {
+      margin-right: 20px; /* Adjust the spacing between items as needed */
+    }
+
+    /* Style for the profile picture */
+    .profile-picture {
+      border-radius: 50%;
+
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand navbar-end">
+      <a class="navbar-item" href="#">
+        <div class="container">
+    <form id="searchForm">
+      <div class="field has-addons">
+        <div class="control">
+          <input class="input" type="text" id="searchInput" placeholder="Search...">
+        </div>
+        <div class="control">
+          <button class="button is-primary" type="submit">
+            Search
+          </button>
+        </div>
+      </div>
+    </form>
+ </div>
+      </a>
+  
+      <a class="navbar-item" href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 50 50" fill="none">
+          <path d="M12.5 4.16669L6.25 12.5V41.6667C6.25 42.7718 6.68899 43.8316 7.47039 44.613C8.25179 45.3944 9.3116 45.8334 10.4167 45.8334H39.5833C40.6884 45.8334 41.7482 45.3944 42.5296 44.613C43.311 43.8316 43.75 42.7718 43.75 41.6667V12.5L37.5 4.16669H12.5Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6.25 12.5H43.75" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M33.3334 20.8333C33.3334 23.0435 32.4554 25.1631 30.8926 26.7259C29.3298 28.2887 27.2102 29.1667 25.0001 29.1667C22.7899 29.1667 20.6703 28.2887 19.1075 26.7259C17.5447 25.1631 16.6667 23.0435 16.6667 20.8333" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      <span class="ml-2 has-text-black">Cart</span>
+      </a>
+        <a class="navbar-item" href="#">
+            <svg viewBox="0 0 36 36" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" class="profile-picture" width="25" height="25"><mask id=":re:" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" rx="72" fill="#FFFFFF" style="--darkreader-inline-fill: #e8e6e3;" data-darkreader-inline-fill=""></rect></mask><g mask="url(#:re:)"><rect width="36" height="36" fill="#49007e" style="--darkreader-inline-fill: #3a0065;" data-darkreader-inline-fill=""></rect><rect x="0" y="0" width="36" height="36" transform="translate(1 1) rotate(183 18 18) scale(1)" fill="#ff7d10" rx="36" style="--darkreader-inline-fill: #c25900;" data-darkreader-inline-fill=""></rect><g transform="translate(-7 0) rotate(3 18 18)"><path d="M15 19c2 1 4 1 6 0" stroke="#000000" fill="none" stroke-linecap="round" style="--darkreader-inline-stroke: #e8e6e3;" data-darkreader-inline-stroke=""></path><rect x="11" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000" style="--darkreader-inline-stroke: none; --darkreader-inline-fill: #e8e6e3;" data-darkreader-inline-stroke="" data-darkreader-inline-fill=""></rect><rect x="23" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000" style="--darkreader-inline-stroke: none; --darkreader-inline-fill: #e8e6e3;" data-darkreader-inline-stroke="" data-darkreader-inline-fill=""></rect></g></g></svg>
+            <span class="ml-2 has-text-black">Account</span>
+          </a>
+    </div>
+  </nav>
+      <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-one-quarter">
+                    <aside class="menu">
+                        <p class="menu-label">Categories</p>
+                        <ul class="menu-list">
+                            <li><a href="#">Women's Clothing</a></li>
+                            <li><a href="#">Men's Clothing</a></li>
+                            <li><a href="#">Jewelry</a></li>
+                            <li><a href="#">Shoes</a></li>
+                            <li><a href="#">Bags</a></li>
+                            <li><a href="#">Accessories</a></li>
+                        </ul>
+                        <p class="menu-label">Price</p>
+                        <ul class="menu-list">
+                            <li><a href="#">₦0 - ₦100</a></li>
+                            <li><a href="#">₦100 - ₦200</a></li>
+                            <li><a href="#">₦200 - ₦300</a></li>
+                            <li><a href="#">₦300 - ₦400</a></li>
+                            <li><a href="#">₦400 - ₦500</a></li>
+                            <li><a href="#">₦500 - ₦1000</a></li>
+                            <li><a href="#">₦1000 - above</a></li>
+                        </ul>
+                        <p class="menu-label">Brand</p>
+                        <ul class="menu-list">
+                            <li><a href="#">Brand A</a></li>
+                            <li><a href="#">Brand B</a></li>
+                            <li><a href="#">Brand C</a></li>
+                            <li><a href="#">Brand D</a></li>
+                            <li><a href="#">Brand E</a></li>
+                        </ul>
+                    </aside>
+                </div>
+                <div class="column">
+<div class="rectangle-24" >
+</div>
+<div class="columns mt-5"> <div class="column"> <img src="./IMG-20231215-WA0080-removebg-preview.png" alt="" srcset=""> <p class="title is-6">Product Name</p> <p class="subtitle is-6">₦19.99</p> </div> <div class="column"> <img src="./IMG-20231215-WA0080-removebg-preview.png" alt="" srcset=""> <p class="title is-6">Product Name</p> <p class="subtitle is-6">₦19.99</p> </div> <div class="column"> <img src="./IMG-20231215-WA0080-removebg-preview.png" alt="" srcset=""> <p class="title is-6">Product Name</p> <p class="subtitle is-6">₦19.99</p> </div> <div class="column"> <img src="./IMG-20231215-WA0080-removebg-preview.png" alt="" srcset=""> <p class="title is-6">Product Name</p> <p class="subtitle is-6">₦19.99</p> </div> </div><div class="columns mt-5"> <div class="column"> <img src="./IMG-20231215-WA0080-removebg-preview.png" alt="" srcset=""> <p class="title is-6">Product Name</p> <p class="subtitle is-6">₦19.99</p> </div> <div class="column"> <img src="./IMG-20231215-WA0080-removebg-preview.png" alt="" srcset=""> <p class="title is-6">Product Name</p> <p class="subtitle is-6">₦19.99</p> </div> <div class="column"> <img src="./IMG-20231215-WA0080-removebg-preview.png" alt="" srcset=""> <p class="title is-6">Product Name</p> <p class="subtitle is-6">₦19.99</p> </div> <div class="column"> <img src="./IMG-20231215-WA0080-removebg-preview.png" alt="" srcset=""> <p class="title is-6">Product Name</p> <p class="subtitle is-6">₦19.99</p> </div> </div>
+
+</div>
+</body>
+<script src="./scripts/main.js"></script>
+</html>
