@@ -42,10 +42,7 @@ const FeaturedProduct = () => {
     <>
       <section className="py-5">
         <Container>
-          <h1
-            className="display-4 font-weight-bold mb-5 text-center"
-            style={{ fontFamily: "Montserrat", fontWeight: "normal" }}
-          >
+          <h1 className="display-4 font-weight-bold mb-5 text-center">
             Our Featured Products
           </h1>{" "}
           <Row>

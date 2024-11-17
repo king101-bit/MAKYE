@@ -16,9 +16,9 @@ export default function ContactUs() {
 
   return (
     <Container className="my-5">
+      <h1 className="text-center mb-4">Contact Us</h1>
       <Row className="justify-content-md-center">
         <Col md={6}>
-          <h2 className="text-center mb-4">Contact Us</h2>
           <Form noValidate validated={validated} onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formName">
               <Form.Label>Name</Form.Label>
@@ -50,7 +50,7 @@ export default function ContactUs() {
                 required
                 as="textarea"
                 rows={3}
-                placeholder="Enter your message"
+                placeholder="Enter your message..."
               />
               <Form.Control.Feedback type="invalid">
                 Please enter your message.
@@ -61,6 +61,15 @@ export default function ContactUs() {
               Submit
             </Button>
           </Form>
+        </Col>
+        <Col md={6}>
+          <h3>Reach out to us for more information or enquires</h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa,
+            iusto? Corporis sapiente quidem nihil, unde molestiae, a ipsa nisi
+            ea maiores veritatis similique, laboriosam eaque at perferendis
+            doloremque temporibus. Dolor?
+          </p>
         </Col>
       </Row>
     </Container>

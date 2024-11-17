@@ -2,7 +2,7 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from "../assets/images/logo.png";
 import "../App.css";
 
-const FashionNavbar = () => {
+const HeroNavbar = () => {
   return (
     <Navbar expand="lg">
       <Container>
@@ -31,4 +31,4 @@ const FashionNavbar = () => {
   );
 };
 
-export default FashionNavbar;
+export default HeroNavbar;

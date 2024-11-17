@@ -1,0 +1,15 @@
+/* Custom styles for rounded dropdowns */
+.dropdown-toggle.rounded-pill {
+     background-color: #f8f9fa;
+     /* Light background */
+     border-radius: 50px;
+     border: 1px solid #ddd;
+     padding: 0.5rem 1rem;
+     font-weight: bold;
+}
+
+.dropdown-toggle.rounded-pill:hover,
+.dropdown-toggle.rounded-pill:focus {
+     background-color: #e9ecef;
+     /* Slightly darker on hover */
+}

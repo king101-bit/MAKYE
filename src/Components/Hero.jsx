@@ -1,12 +1,19 @@
 import "../App.css";
 import { Button, Container, Row, Col } from "react-bootstrap";
-import FashionNavbar from "../Components/FashionNavbar";
 import { Typewriter } from "react-simple-typewriter";
+import { useNavigate } from "react-router-dom";
+import HeroNavbar from "./HeroNavbar";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
+  const goToShop = () => {
+    navigate("/shop");
+  };
+
   return (
     <>
-      <FashionNavbar className="navbar" />
+      <HeroNavbar className="navbar" />
       {/* Navbar */}
       <section className="py-5 position-relative overflow-hidden">
         <Container className="py-5">
@@ -45,7 +52,12 @@ const Hero = () => {
                 collection. Elevate your style with Chic Boutique&apos;s
                 exclusive fashion pieces.
               </p>
-              <Button variant="danger" size="lg" className="rounded-pill px-4">
+              <Button
+                onClick={goToShop}
+                variant="danger"
+                size="lg"
+                className="rounded-pill px-4"
+              >
                 Shop Now
               </Button>
             </Col>
