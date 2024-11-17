@@ -13,3 +13,16 @@
      background-color: #e9ecef;
      /* Slightly darker on hover */
 }
+
+.dropdown-menu {
+     z-index: 1050;
+     /* Ensure it stays above other components */
+     border-radius: 0.25rem;
+}
+
+.dropdown-item {
+     display: flex;
+     align-items: center;
+     gap: 0.5rem;
+     font-size: 14px;
+}

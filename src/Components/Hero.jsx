@@ -19,10 +19,7 @@ const Hero = () => {
         <Container className="py-5">
           <Row className="align-items-center">
             <Col lg={6}>
-              <h1
-                className="display-4 font-weight-bold mb-4"
-                style={{ fontFamily: "Bebas Neue" }}
-              >
+              <h1 className="display-4 font-weight-bold mb-4">
                 Fashion meets{" "}
                 <span className="text-danger">
                   <Typewriter
@@ -44,10 +41,7 @@ const Hero = () => {
                   />
                 </span>
               </h1>
-              <p
-                className="lead mb-4"
-                style={{ fontFamily: "Montserrat", fontWeight: "normal" }}
-              >
+              <p className="lead mb-4">
                 Discover the latest trends and timeless classics in our curated
                 collection. Elevate your style with Chic Boutique&apos;s
                 exclusive fashion pieces.

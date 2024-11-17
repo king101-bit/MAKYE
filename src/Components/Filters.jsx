@@ -22,20 +22,6 @@ const Filters = () => {
           variant="light"
           className="rounded-pill px-4 py-2 border"
         >
-          All Colors
-        </Dropdown.Toggle>
-        <Dropdown.Menu>
-          <Dropdown.Item>Black</Dropdown.Item>
-          <Dropdown.Item>Gray</Dropdown.Item>
-          <Dropdown.Item>Yellow</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
-
-      <Dropdown>
-        <Dropdown.Toggle
-          variant="light"
-          className="rounded-pill px-4 py-2 border"
-        >
           All Features
         </Dropdown.Toggle>
         <Dropdown.Menu>
@@ -64,12 +50,12 @@ const Filters = () => {
           variant="light"
           className="rounded-pill px-4 py-2 border"
         >
-          New In
+          Sort by
         </Dropdown.Toggle>
         <Dropdown.Menu>
+          <Dropdown.Item>Most Popular</Dropdown.Item>
           <Dropdown.Item>Price: Low to High</Dropdown.Item>
           <Dropdown.Item>Price: High to Low</Dropdown.Item>
-          <Dropdown.Item>Most Popular</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
     </div>
