@@ -13,7 +13,7 @@ const ProductCard = ({ products }) => {
       {products.map((product) => (
         <Col key={product.id} xs={12} sm={6} lg={3}>
           <Link
-            to={`/shop/products/${product.id}-${product.slug}`}
+            to={`/shop/products/${product.id}/${product.slug}`}
             style={{ textDecoration: "none", color: "inherit" }}
           >
             <Card className="border-0 rounded-none h-100">

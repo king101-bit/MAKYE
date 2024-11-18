@@ -1,4 +1,4 @@
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import logo from "../assets/images/logo.png";
 import "../App.css";
 
@@ -18,11 +18,20 @@ const HeroNavbar = () => {
             <Nav.Link href="/shop">
               <strong>Shop</strong>
             </Nav.Link>
-            <Nav.Link href="#about">
-              <strong>About</strong>
-            </Nav.Link>
             <Nav.Link href="#contact">
               <strong>Contact</strong>
+            </Nav.Link>
+            <Nav.Link href="/signup">
+              <Button variant="outline-danger">
+                {" "}
+                <strong>Sign Up</strong>
+              </Button>
+            </Nav.Link>
+            <Nav.Link href="/login">
+              <Button variant="danger">
+                {" "}
+                <strong>Login</strong>
+              </Button>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

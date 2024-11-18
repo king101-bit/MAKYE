@@ -30,6 +30,7 @@ const Shop = () => {
           price: 250.0,
           image:
             "https://i.pinimg.com/736x/5f/d7/01/5fd7010a27121b4500cc794eab4095fa.jpg",
+          slug: "sofo-backpack-city",
         },
         {
           id: "3",
@@ -37,7 +38,20 @@ const Shop = () => {
           details: "Sustainable Design",
           price: 100.0,
           image:
-            "https://i.pinimg.com/736x/3a/85/a7/3a85a7a98609f9e4b6a4a7f8d896b1f2.jpg",
+            "https://i.pinimg.com/736x/0d/3b/3e/0d3b3e8a812df4ffbc470b4b9c566dca.jpg",
+          slug: "eco-tote-bag",
+        },
+        {
+          id: "4",
+          slug: "ocean-shirt",
+          name: "Ocean Shirt",
+          details: "Sustainable Fabric",
+          price: 15000.0,
+          images: [
+            "https://plus.unsplash.com/premium_photo-1692439050929-9c21209b0c29?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D",
+            "https://plus.unsplash.com/premium_photo-1692439051710-f8c2de2f068d?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fHw%3D",
+          ],
+          colors: ["Blue", "Green", "Yellow", "Black", "Red"],
         },
       ];
       setAllProducts(mockProducts);

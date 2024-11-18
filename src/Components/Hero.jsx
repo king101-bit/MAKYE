@@ -19,7 +19,7 @@ const Hero = () => {
         <Container className="py-5">
           <Row className="align-items-center">
             <Col lg={6}>
-              <h1 className="display-4 font-weight-bold mb-4">
+              <h1 className="display-4 fw-bold mb-4">
                 Fashion meets{" "}
                 <span className="text-danger">
                   <Typewriter

@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import ShopNavbar from "./ShopNavbar";
 import { Button, Carousel, Container } from "react-bootstrap";
 import { Heart, ShoppingBag } from "lucide-react";
 import ErrorPage from "../Components/ErrorPage";
+import { useCart } from "../Constants/CartContext";
 
 const ProductDetails = () => {
-  const { id, slug } = useParams();
-  console.log("ID:", id, "Slug:", slug);
+  const { addToCart } = useCart();
 
-  // Mock product data
+  const { id, slug } = useParams();
+  const [selectedColor, setSelectedColor] = useState(""); // Track selected color
+  const [selectedSize, setSelectedSize] = useState(""); // Track selected size
+
   const products = [
     {
       id: "1",
@@ -22,7 +25,7 @@ const ProductDetails = () => {
         "https://i.pinimg.com/236x/89/d2/14/89d2142fe738848b5a44ec5e7cb9fadd.jpg",
         "https://i.pinimg.com/236x/f4/a1/0e/f4a10e5fed4bc4921e36b6a32103b44a.jpg",
       ],
-      colors: ["red", "blue", "black"],
+      colors: ["Red", "Blue", "Black"],
     },
     {
       id: "2",
@@ -34,26 +37,59 @@ const ProductDetails = () => {
         "https://i.pinimg.com/736x/5f/d7/01/5fd7010a27121b4500cc794eab4095fa.jpg",
         "https://i.pinimg.com/736x/3e/6f/5e/3e6f5e81cbcae0bc2ad5d15d89420430.jpg",
       ],
-      colors: ["green", "grey"],
+      colors: ["Green", "Grey"],
+    },
+    {
+      id: "3",
+      slug: "eco-tote-bag",
+      name: "Eco Tote Bag",
+      details: "Sustainable Design",
+      price: 100.0,
+      images: [
+        "https://i.pinimg.com/736x/0d/3b/3e/0d3b3e8a812df4ffbc470b4b9c566dca.jpg",
+        "https://i.pinimg.com/736x/f1/58/a9/f158a96c2d172c766701beb736369868.jpg",
+      ],
+      colors: ["Green", "Grey", "Red", "White"],
+    },
+    {
+      id: "4",
+      slug: "ocean-shirt",
+      name: "Ocean Shirt",
+      details: "Sustainable Fabric",
+      price: 15000.0,
+      images: [
+        "https://plus.unsplash.com/premium_photo-1692439050929-9c21209b0c29?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D",
+        "https://plus.unsplash.com/premium_photo-1692439051710-f8c2de2f068d?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fHw%3D",
+      ],
+      colors: ["Blue", "Green", "Yellow", "Black", "Red"],
     },
   ];
-
-  // Find the product by ID && Slug
   const product = products.find((p) => p.id === id && p.slug === slug);
-  console.log("Matched Product:", product);
 
-  // Handle error scenarios (missing product or slug mismatch)
   if (!product) {
     return (
-      <>
-        <ErrorPage
-          message="The product you are looking for doesn't exist. Please browse our shop for more options."
-          redirectPath="/shop"
-          redirectLabel="Go to Shop"
-        />{" "}
-      </>
+      <ErrorPage
+        message="The product you are looking for doesn't exist. Please browse our shop for more options."
+        redirectPath="/shop"
+        redirectLabel="Go to Shop"
+      />
     );
   }
+
+  const handleAddToCart = () => {
+    if (!selectedColor || !selectedSize) {
+      alert("Please select a color and size before adding to the cart.");
+      return;
+    }
+
+    // Add product to cart with selected size and color
+    addToCart({
+      ...product,
+      color: selectedColor,
+      size: selectedSize,
+      image: product.images[0], // Ensure this picks the first image
+    });
+  };
 
   return (
     <>
@@ -80,8 +116,11 @@ const ProductDetails = () => {
           <div className="col-md-6">
             <h1>{product.name}</h1>
             <p>{product.details}</p>
+            <p className="h4 fw-bold">&#8358;{product.price.toFixed(2)}</p>
             <div>
               <small>Specifications:</small>
+
+              {/* Color Options */}
               <div className="d-flex gap-3 mt-2">
                 {product.colors.map((color, index) => (
                   <Button
@@ -90,8 +129,10 @@ const ProductDetails = () => {
                       backgroundColor: color,
                       width: "40px",
                       height: "40px",
+                      border: selectedColor === color ? "2px solid black" : "",
                     }}
                     className="rounded-circle border border-secondary"
+                    onClick={() => setSelectedColor(color)}
                     aria-label={`Color option: ${color}`}
                   />
                 ))}
@@ -104,16 +145,26 @@ const ProductDetails = () => {
                     key={index}
                     variant="outline-danger"
                     className="rounded-circle"
-                    style={{ width: "40px", height: "40px" }}
+                    style={{
+                      width: "40px",
+                      height: "40px",
+                      backgroundColor:
+                        selectedSize === size ? "rgba(255, 0, 0, 0.1)" : "",
+                    }}
+                    onClick={() => setSelectedSize(size)}
                   >
                     {size}
                   </Button>
                 ))}
               </div>
             </div>
-            <p className="h4 mt-4">Price: &#8358;{product.price.toFixed(2)}</p>
             <div className="d-flex gap-3 mt-3">
-              <Button variant="danger" size="lg" className="rounded-pill px-4">
+              <Button
+                variant="danger"
+                size="lg"
+                className="px-4 w-100"
+                onClick={handleAddToCart}
+              >
                 <ShoppingBag size={24} className="me-2" />
                 Add to Cart
               </Button>
@@ -122,8 +173,7 @@ const ProductDetails = () => {
                 size="lg"
                 className="rounded-pill px-4"
               >
-                <Heart size={20} className="me-2" />
-                Add to Wishlist
+                <Heart size={20} className="" />
               </Button>
             </div>
           </div>
