@@ -15,8 +15,8 @@ const HeroNavbar = () => {
             <Nav.Link href="/">
               <strong>Home</strong>
             </Nav.Link>
-            <Nav.Link href="/shop">
-              <strong>Shop</strong>
+            <Nav.Link href="#about">
+              <strong>About</strong>
             </Nav.Link>
             <Nav.Link href="#contact">
               <strong>Contact</strong>

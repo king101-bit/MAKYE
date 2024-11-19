@@ -1,12 +1,12 @@
 import Hero from "../Components/Hero";
-import FeaturedProduct from "../Components/FeaturedProduct";
+import About from "../Components/About";
 import Contact from "../Components/Contact";
 
 export const LandingPage = () => {
   return (
     <>
       <Hero />
-      <FeaturedProduct />
+      <About />
       <Contact />
     </>
   );
