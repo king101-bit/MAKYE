@@ -9,9 +9,6 @@ const About = () => {
           <h1 className="display-4 fw-bold mb-5 text-center">About Us</h1>
           <Row>
             <Col>
-              <img src={Icon} width={350} height={250} alt="" />
-            </Col>
-            <Col>
               <h1>
                 We&lsquo;re a small group of persons who sell clothes at an
                 affordable price
@@ -22,6 +19,9 @@ const About = () => {
                 doloremque dolores adipisci omnis ducimus illum delectus quia?
                 Asperiores pariatur commodi distinctio recusandae.
               </p>
+            </Col>
+            <Col>
+              <img src={Icon} width={350} height={250} alt="" />
             </Col>
           </Row>
         </Container>
