@@ -1,4 +1,3 @@
-import React from "react";
 import { useCart } from "../Constants/CartContext";
 import ShopNavbar from "../Components/ShopNavbar";
 import { Container, Button, Col, Row } from "react-bootstrap";

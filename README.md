@@ -1,8 +1,8 @@
-# React + Vite
+# MAKYE
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Minimal yet flexible fashion store made to improve my understanding of React and its performance and functionality
+everything works apart for the filters that will be implemented at a latter time and will be used effectively.
 
-Currently, two official plugins are available:
+Currently, There are several different Packages in use for this project I will make a legend of contents for it changes will be made periodically.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of Contents
