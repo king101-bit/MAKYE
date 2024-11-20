@@ -33,14 +33,14 @@ const Cart = () => {
                     >
                       {/* Product Image */}
                       <img
-                        src={item.image || "https://via.placeholder.com/100"} // Use the image property from the cart item
+                        src={item.image || "https://via.placeholder.com/200"} // Use the image property from the cart item
                         alt={item.name}
                         onError={(e) =>
-                          (e.target.src = "https://via.placeholder.com/100")
+                          (e.target.src = "https://via.placeholder.com/200")
                         }
                         style={{
-                          width: "100px",
-                          height: "100px",
+                          width: "200px",
+                          height: "200px",
                           objectFit: "cover",
                         }}
                         className="rounded border me-3"
@@ -82,17 +82,15 @@ const Cart = () => {
                       </div>
                     </li>
                   ))}
+                  <hr />
                 </ol>
-
-                <hr />
-                <h3></h3>
               </Col>
 
               {/* Order Summary Section */}
               <Col>
                 <Container
                   className="border rounded p-4 shadow-sm"
-                  style={{ maxWidth: "300px", backgroundColor: "#FFFF" }}
+                  style={{ maxWidth: "450px", backgroundColor: "#FFFF" }}
                 >
                   <h4 className="text-center">Order Summary</h4>
                   <hr />
@@ -130,7 +128,11 @@ const Cart = () => {
                   <hr />
                   <Row>
                     <Col>
-                      <Button variant="danger" className="w-100">
+                      <Button
+                        variant="danger"
+                        href="/checkout"
+                        className="w-100"
+                      >
                         Place Order
                       </Button>
                     </Col>

@@ -10,6 +10,7 @@ import ProductDetails from "./Components/ProductDetails";
 import ErrorPage from "./Components/ErrorPage";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
+import Checkout from "./Pages/Checkout";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/account" element={<Account />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/checkout" element={<Checkout />} />
           <Route
             path="*"
             element={
