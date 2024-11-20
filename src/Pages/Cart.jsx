@@ -1,6 +1,7 @@
 import { useCart } from "../Constants/CartContext";
 import ShopNavbar from "../Components/ShopNavbar";
 import { Container, Button, Col, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const {
@@ -127,13 +128,15 @@ const Cart = () => {
                   <hr />
                   <Row>
                     <Col>
-                      <Button
-                        variant="danger"
-                        href="/checkout"
-                        className="w-100"
-                      >
-                        Place Order
-                      </Button>
+                      <Link to="/checkout">
+                        <Button
+                          variant="danger"
+                          href="/checkout"
+                          className="w-100"
+                        >
+                          Place Order
+                        </Button>
+                      </Link>
                     </Col>
                   </Row>
                 </Container>
