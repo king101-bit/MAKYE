@@ -1,37 +1,44 @@
 import { Button, Container, Row, Col } from "react-bootstrap";
 import { usePaystackPayment } from "react-paystack";
+import { Link } from "react-router-dom";
+import { useCart } from "../Constants/CartContext"; // Import the cart context hook
+import { useLocation } from "react-router-dom";
 
-const config = {
-  reference: new Date().getTime().toString(),
-  email: "your_email@example.com",
-  amount: 10000, // 10000 is 10000 Naira
-  publicKey: "pk_test_929dbc2148b38aeee1df3432f5fef20c33382ad4",
-};
-const onSuccess = (reference) => {
-  console.log(reference);
-};
+const PaystackHook = ({ email, amount }) => {
+  const config = {
+    reference: new Date().getTime().toString(), // Unique transaction reference
+    email: email || "default_email@example.com", // Replace with the actual user email
+    amount: amount * 100, // Amount in Kobo (1 Naira = 100 Kobo)
+    publicKey: import.meta.env.VITE_PAYSTACK_PUBLIC_KEY, // Correct Public Key
+  };
 
-const onClose = () => {
-  console.log("Payment closed");
-};
-
-const PaystackHook = () => {
   const initializePayment = usePaystackPayment(config);
+
+  const onSuccess = (reference) => {
+    console.log("Payment successful:", reference);
+    // Optionally verify the payment on your server here
+  };
+
+  const onClose = () => {
+    console.log("Payment closed");
+  };
+
   return (
-    <div>
-      <Button
-        onClick={() => {
-          initializePayment(onSuccess, onClose);
-        }}
-        variant="danger"
-      >
-        Pay Now
-      </Button>
-    </div>
+    <Button
+      onClick={() => initializePayment(onSuccess, onClose)}
+      variant="danger"
+    >
+      Pay Now
+    </Button>
   );
 };
 
 const Checkout = () => {
+  const location = useLocation();
+  const { finalTotal, cart } = location.state || {}; // Get finalTotal from state
+
+  const userEmail = "user@example.com"; // Replace with actual user data from context or props
+
   return (
     <div>
       <h1 className="text-center fw-bold">Checkout</h1>
@@ -39,15 +46,21 @@ const Checkout = () => {
       <Container fluid>
         <Row>
           <Col>
-            <h1>Click the button to make your payment</h1>{" "}
+            <h1>Click the button to make your payment</h1>
           </Col>
           <Col>
-            <Container className="d-flex flex gap-3">
-              <PaystackHook />
-              <Button href="/shop" variant="outline-danger" className="">
-                Go to Shop
+            <Container className="d-flex gap-3">
+              {/* Use finalTotal instead of totalPrice */}
+              <PaystackHook email={userEmail} amount={finalTotal} />
+              <Button variant="outline-danger" as={Link} to="/cart">
+                Go to Cart
               </Button>
             </Container>
+          </Col>
+        </Row>
+        <Row className="mt-5">
+          <Col>
+            <h4>Total Price: &#8358;{finalTotal}</h4> {/* Display finalTotal */}
           </Col>
         </Row>
       </Container>

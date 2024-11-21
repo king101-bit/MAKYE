@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useMemo,
+} from "react";
 
 // Create the Cart Context
 const CartContext = createContext();
@@ -67,9 +73,17 @@ export const CartProvider = ({ children }) => {
   };
 
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-  const totalPrice = cart
-    .reduce((sum, item) => sum + item.price * item.quantity, 0)
-    .toFixed(2);
+  const totalPrice = useMemo(() => {
+    if (!cart || cart.length === 0) return 0; // Handle empty cart
+    return parseFloat(
+      cart
+        .reduce(
+          (sum, item) => sum + (item.price || 0) * (item.quantity || 0),
+          0
+        )
+        .toFixed(2)
+    );
+  }, [cart]);
 
   return (
     <CartContext.Provider
