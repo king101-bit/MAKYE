@@ -1,7 +1,6 @@
 import { Button, Container, Row, Col } from "react-bootstrap";
 import { usePaystackPayment } from "react-paystack";
 import { Link } from "react-router-dom";
-import { useCart } from "../Constants/CartContext"; // Import the cart context hook
 import { useLocation } from "react-router-dom";
 
 const PaystackHook = ({ email, amount }) => {
@@ -41,28 +40,12 @@ const Checkout = () => {
 
   return (
     <div>
-      <h1 className="text-center fw-bold">Checkout</h1>
-
-      <Container fluid>
-        <Row>
-          <Col>
-            <h1>Click the button to make your payment</h1>
-          </Col>
-          <Col>
-            <Container className="d-flex gap-3">
-              {/* Use finalTotal instead of totalPrice */}
-              <PaystackHook email={userEmail} amount={finalTotal} />
-              <Button variant="outline-danger" as={Link} to="/cart">
-                Go to Cart
-              </Button>
-            </Container>
-          </Col>
-        </Row>
-        <Row className="mt-5">
-          <Col>
-            <h4>Total Price: &#8358;{finalTotal}</h4> {/* Display finalTotal */}
-          </Col>
-        </Row>
+      <Container className="justify-content-center">
+        <h1>Under construction at the moment </h1>
+        <br />
+        <h1>
+          go back to <Link to="/cart">Cart</Link>
+        </h1>
       </Container>
     </div>
   );

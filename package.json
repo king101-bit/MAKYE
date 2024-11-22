@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@fontsource/montserrat": "^5.1.0",
+    "@formspree/react": "^2.5.1",
     "@supabase/supabase-js": "^2.46.1",
     "bootstrap": "^5.3.3",
     "boring-avatars": "^1.11.2",
@@ -22,6 +23,7 @@
     "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",
     "react-paystack": "^6.0.0",
+    "react-rating-stars-component": "^2.2.0",
     "react-router-dom": "^6.28.0",
     "react-simple-typewriter": "^5.0.1"
   },

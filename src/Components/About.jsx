@@ -8,19 +8,18 @@ const About = () => {
         <Container>
           <h1 className="display-4 fw-bold mb-5 text-center">About Us</h1>
           <Row>
-            <Col>
-              <h1>
-                We&lsquo;re a small group of persons who sell clothes at an
-                affordable price
+            <Col lg={6}>
+              <h1 className="display-5 mb-4">
+                Affordable Fashion, Curated for You
               </h1>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-                mollitia voluptates dolorem consequuntur tenetur, eius nam quam
-                doloremque dolores adipisci omnis ducimus illum delectus quia?
-                Asperiores pariatur commodi distinctio recusandae.
+              <p className="lead text-muted">
+                We are a passionate team dedicated to offering stylish and
+                high-quality clothing at prices that won’t break the bank. Our
+                goal is to make fashion accessible to everyone while ensuring
+                exceptional value and timeless designs.
               </p>
             </Col>
-            <Col>
+            <Col lg={6}>
               <img src={Icon} width={350} height={250} alt="" />
             </Col>
           </Row>

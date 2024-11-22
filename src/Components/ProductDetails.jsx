@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import ShopNavbar from "./ShopNavbar";
-import { Button, Carousel, Container } from "react-bootstrap";
-import { Heart, ShoppingBag } from "lucide-react";
+import { Button, Card, Carousel, Container, Row, Col } from "react-bootstrap";
+import {
+  Heart,
+  LucideThumbsDown,
+  LucideThumbsUp,
+  ShoppingBag,
+} from "lucide-react";
 import ErrorPage from "../Components/ErrorPage";
 import { useCart } from "../Constants/CartContext";
+import ReactStars from "react-rating-stars-component";
 
 const ProductDetails = () => {
   const { addToCart } = useCart();
@@ -34,8 +40,8 @@ const ProductDetails = () => {
       details: "Recycled Cotton Canvas",
       price: 25000.0,
       images: [
-        "https://i.pinimg.com/736x/5f/d7/01/5fd7010a27121b4500cc794eab4095fa.jpg",
-        "https://i.pinimg.com/736x/3e/6f/5e/3e6f5e81cbcae0bc2ad5d15d89420430.jpg",
+        "https://i.pinimg.com/474x/6a/e5/c8/6ae5c844974483dbf94bf6fc09f63999.jpg",
+        "https://i.pinimg.com/474x/6a/e5/c8/6ae5c844974483dbf94bf6fc09f63999.jpg",
       ],
       colors: ["Green", "Grey"],
     },
@@ -44,12 +50,12 @@ const ProductDetails = () => {
       slug: "eco-tote-bag",
       name: "Eco Tote Bag",
       details: "Sustainable Design",
-      price: 100.0,
+      price: 1000.0,
       images: [
         "https://i.pinimg.com/736x/0d/3b/3e/0d3b3e8a812df4ffbc470b4b9c566dca.jpg",
         "https://i.pinimg.com/736x/f1/58/a9/f158a96c2d172c766701beb736369868.jpg",
       ],
-      colors: ["Green", "Grey", "Red", "White"],
+      colors: ["Green", "Grey", "Red", "Blue"],
     },
     {
       id: "4",
@@ -90,6 +96,9 @@ const ProductDetails = () => {
       image: product.images[0], // Ensure this picks the first image
     });
   };
+  const ratingChanged = (newRating) => {
+    console.log(newRating);
+  };
 
   return (
     <>
@@ -98,7 +107,7 @@ const ProductDetails = () => {
         <div className="row">
           {/* Carousel Section */}
           <div className="col-md-6">
-            <Carousel>
+            <Carousel fade>
               {product.images.map((image, index) => (
                 <Carousel.Item key={index}>
                   <img
@@ -118,6 +127,14 @@ const ProductDetails = () => {
             <p>{product.details}</p>
             <p className="h4 fw-bold">&#8358;{product.price.toFixed(2)}</p>
             <div>
+              <h5>Rating: 4</h5>
+              <ReactStars
+                count={5}
+                value={4}
+                onChange={ratingChanged}
+                size={25}
+                activeColor="#ffd700"
+              />
               <small>Specifications:</small>
 
               {/* Color Options */}
@@ -127,8 +144,8 @@ const ProductDetails = () => {
                     key={index}
                     style={{
                       backgroundColor: color,
-                      width: "40px",
-                      height: "40px",
+                      width: "50px",
+                      height: "50px",
                       border: selectedColor === color ? "2px solid black" : "",
                     }}
                     className="rounded-circle border border-secondary"
@@ -178,6 +195,59 @@ const ProductDetails = () => {
             </div>
           </div>
         </div>
+      </Container>
+      <Container className="mt-4">
+        <h3>Product Reviews</h3>
+        <hr />
+        <Row>
+          <Col>
+            {" "}
+            <Card>
+              <Card.Body>
+                <Card.Title>John Doe</Card.Title>
+                <small>@JohnnyDoins</small>
+                <Card.Text>I absolutely love this bag its so good.</Card.Text>
+                <div className="d-flex gap-2">
+                  <ReactStars
+                    count={5}
+                    value={4}
+                    onChange={ratingChanged}
+                    size={25}
+                    activeColor="#ffd700"
+                  />{" "}
+                  <small>2022-05-15</small>
+                  <div className="me-2 ">
+                    <LucideThumbsUp />
+                    <LucideThumbsDown />
+                  </div>
+                </div>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+            <Card>
+              <Card.Body>
+                <Card.Title>Mikhael Roze</Card.Title>
+                <small>@Mikhael92ro</small>
+                <Card.Text>I love this bag its so compact.</Card.Text>
+                <div className="d-flex gap-2">
+                  <ReactStars
+                    count={5}
+                    value={5}
+                    onChange={ratingChanged}
+                    size={25}
+                    activeColor="#ffd700"
+                  />{" "}
+                  <small>2022-06-18</small>
+                  <div className="me-2 ">
+                    <LucideThumbsUp />
+                    <LucideThumbsDown />
+                  </div>
+                </div>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
       </Container>
     </>
   );

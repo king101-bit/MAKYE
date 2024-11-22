@@ -1,72 +1,76 @@
-import { useState } from "react";
-import { Form, Button, Container, Row, Col } from "react-bootstrap";
+import { Form, Button, Container, Row, Col, Alert } from "react-bootstrap";
+import { useForm, ValidationError } from "@formspree/react";
 
 export default function ContactUs() {
-  const [validated, setValidated] = useState(false);
-
-  const handleSubmit = (event) => {
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-
-    setValidated(true);
-  };
+  const [state, handleSubmit] = useForm("mzzbvlpb");
 
   return (
     <section id="contact">
       <Container className="my-5">
-        <h1 className="text-center mb-4 fw-bold">Contact Us</h1>
-        <Row className="justify-content-md-center">
-          <Col md={6}>
-            <Form noValidate validated={validated} onSubmit={handleSubmit}>
-              <Form.Group className="mb-3" controlId="formName">
-                <Form.Label>Name</Form.Label>
-                <Form.Control
-                  required
-                  type="text"
-                  placeholder="Enter your name"
-                />
-                <Form.Control.Feedback type="invalid">
-                  Please provide your name.
-                </Form.Control.Feedback>
-              </Form.Group>
+        <h1 className="display-4 text-center mb-4 fw-bold">Contact Us</h1>
+        <Row className="justify-content-between">
+          <Col md={6} className="mb-4 mb-md-0">
+            {state.succeeded && (
+              <Alert variant="success" className="mb-4">
+                🎉 Your message has been sent successfully! Thank you for
+                reaching out to us.
+              </Alert>
+            )}
 
-              <Form.Group className="mb-3" controlId="formEmail">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control
-                  required
-                  type="email"
-                  placeholder="Enter your email"
-                />
-                <Form.Control.Feedback type="invalid">
-                  Please provide a valid email.
-                </Form.Control.Feedback>
-              </Form.Group>
+            {!state.succeeded && (
+              <Form onSubmit={handleSubmit}>
+                <Form.Group className="mb-4" controlId="email">
+                  <Form.Label>Email Address</Form.Label>
+                  <Form.Control
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    className="py-3"
+                    required
+                  />
+                  <ValidationError
+                    prefix="Email"
+                    field="email"
+                    errors={state.errors}
+                  />
+                </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formMessage">
-                <Form.Label>Message</Form.Label>
-                <Form.Control
-                  required
-                  as="textarea"
-                  rows={3}
-                  placeholder="Enter your message..."
-                />
-                <Form.Control.Feedback type="invalid">
-                  Please enter your message.
-                </Form.Control.Feedback>
-              </Form.Group>
+                <Form.Group className="mb-4" controlId="message">
+                  <Form.Label>Message</Form.Label>
+                  <Form.Control
+                    as="textarea"
+                    id="message"
+                    name="message"
+                    rows={4}
+                    placeholder="Enter your message..."
+                    className="py-3"
+                    required
+                  />
+                  <ValidationError
+                    prefix="Message"
+                    field="message"
+                    errors={state.errors}
+                  />
+                </Form.Group>
 
-              <Button variant="danger" type="submit" className="w-100">
-                Submit
-              </Button>
-            </Form>
+                <Button
+                  type="submit"
+                  disabled={state.submitting}
+                  variant="danger"
+                  className="w-100 py-3"
+                >
+                  <strong>
+                    {state.submitting ? "Submitting..." : "Submit"}
+                  </strong>
+                </Button>
+              </Form>
+            )}
           </Col>
-          <Col md={6}>
-            <h3 className=""> We&#39;re here to help!</h3>
-            <p>
-              Please fill out the form below and we&lsquo;ll get back to you as
+          <Col md={5}>
+            <h2 className="display-5 mb-4">We&apos;re here to help!</h2>
+            <p className="lead text-muted">
+              Please fill out the form below and we&apos;ll get back to you as
               soon as possible.
             </p>
           </Col>

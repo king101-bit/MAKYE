@@ -12,7 +12,7 @@ const HeroNavbar = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto align-items-center gap-3">
+          <Nav className="ms-auto align-items-center gap-2">
             {/* Corrected: `Nav.Link` cannot be used inside `Link`, replaced with plain `Link` */}
             <Link to="/" className="nav-link">
               <strong>Home</strong>
