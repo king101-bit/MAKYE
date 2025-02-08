@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import ShopNavbar from "./ShopNavbar";
-import { Button, Card, Carousel, Container, Row, Col } from "react-bootstrap";
+import { Button, Card, Carousel, Container, Row, Col, Form  } from "react-bootstrap";
 import {
   Heart,
   LucideThumbsDown,
   LucideThumbsUp,
   ShoppingBag,
 } from "lucide-react";
-import ErrorPage from "../Components/ErrorPage";
+import ErrorPage from "../Pages/ErrorPage";
 import { useCart } from "../Constants/CartContext";
 import ReactStars from "react-rating-stars-component";
 
@@ -199,6 +199,18 @@ const ProductDetails = () => {
       <Container className="mt-4">
         <h3>Product Reviews</h3>
         <hr />
+<div className="d-flex align-items-center">
+      <Form.Control
+        as="textarea"
+        placeholder="Write something..."
+        rows={2}
+        className="me-2 mb-4"
+        style={{ width: "300px", resize: "none" }}
+      />
+      <Button variant="outline-danger" size="lg" className="mb-4">
+        Post
+      </Button>
+    </div>
         <Row>
           <Col>
             {" "}

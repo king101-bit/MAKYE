@@ -7,7 +7,7 @@ import Shop from "./Pages/Shop";
 import Cart from "./Pages/Cart";
 import Account from "./Pages/Account";
 import ProductDetails from "./Components/ProductDetails";
-import ErrorPage from "./Components/ErrorPage";
+import ErrorPage from "./Pages/ErrorPage";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
 import Checkout from "./Pages/Checkout";
